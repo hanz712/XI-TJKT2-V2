@@ -1,48 +1,34 @@
-const express = require("express");
-const cors = require("cors");
-const { createClient } = require("@supabase/supabase-js");
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const { createClient } = require('@supabase/supabase-client');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-// Ambil URL dan KEY dari Environment Variables
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_KEY;
+// 1. Hubungkan ke Supabase (mengambil dari Environment Variables Vercel)
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+// 2. Sajikan file statis frontend (Style.css, Script.js, dll)
+app.use(express.static(path.join(__dirname)));
 
-app.get("/", (req, res) => {
-  res.json({ status: true, message: "Backend XI TJKT 2 berjalan 🚀" });
+// 3. Route Utama: Tampilkan halaman Frontend (index.html)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get("/api/absensi", async (req, res) => {
-  try {
-    const { data, error } = await supabase.from("absensi").select("*, siswa(nama)");
-    if (error) throw error;
-    res.json({ status: true, data });
-  } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
-  }
+// 4. Contoh Route API untuk cek status backend
+app.get('/api/status', (req, res) => {
+  res.json({ status: true, message: 'Backend & Supabase terhubung! 🚀' });
 });
 
-app.post("/api/absensi", async (req, res) => {
-  try {
-    const { siswa_id, status, tanggal } = req.body;
-    const tgl = tanggal || new Date().toISOString().split("T")[0];
-    const { data, error } = await supabase.from("absensi").insert([{ siswa_id, status, tanggal: tgl }]).select();
-    if (error) throw error;
-    res.status(201).json({ status: true, data: data[0] });
-  } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
-  }
-});
+// Tulis Endpoint API kamu yang lain di bawah ini (misal: /api/data)
 
-if (process.env.NODE_ENV !== "production") {
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-}
-
+// Export app untuk Vercel Serverless
 module.exports = app;
+
 
