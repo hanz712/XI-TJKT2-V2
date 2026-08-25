@@ -1,15 +1,15 @@
 {
-  "name": "xi-tjkt2-v2-backend",
+  "name": "xi-tjkt-2",
   "version": "1.0.0",
-  "description": "Backend web kelas XI TJKT 2",
+  "description": "Project Backend dan Frontend XI TJKT 2",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^4.18.2"
   }
 }
+
