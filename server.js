@@ -35,10 +35,8 @@ if (supabaseUrl && supabaseKey) {
    STATIC FRONTEND
 ========================================= */
 
-const publicPath = __dirname;
-
 app.use(
-  express.static(publicPath, {
+  express.static(__dirname, {
     index: false
   })
 );
@@ -75,6 +73,33 @@ app.get('/api/status', (req, res) => {
 
 
 /* =========================================
+   API CONFIG TEST
+   Untuk mengecek Environment Variables
+========================================= */
+
+app.get('/api/config-test', (req, res) => {
+
+  const url = process.env.SUPABASE_URL || '';
+
+  res.json({
+    supabaseUrlConfigured:
+      Boolean(process.env.SUPABASE_URL),
+
+    supabaseKeyConfigured:
+      Boolean(process.env.SUPABASE_KEY),
+
+    supabaseUrl: url
+      ? url.replace(
+          /^(.{8}).*(\.supabase\.co.*)$/,
+          '$1...$2'
+        )
+      : null
+  });
+
+});
+
+
+/* =========================================
    API SUPABASE TEST
 ========================================= */
 
@@ -92,14 +117,6 @@ app.get('/api/supabase-test', async (req, res) => {
 
   try {
 
-    /*
-      Test koneksi dengan mengambil
-      satu data dari tabel siswa.
-
-      Pastikan tabel "siswa" sudah dibuat
-      di Supabase.
-    */
-
     const { data, error } =
       await supabase
         .from('siswa')
@@ -110,7 +127,8 @@ app.get('/api/supabase-test', async (req, res) => {
 
       return res.status(500).json({
         status: false,
-        message: 'Supabase terhubung tetapi query gagal.',
+        message:
+          'Supabase terhubung tetapi query gagal.',
         error: error.message
       });
 
@@ -118,7 +136,8 @@ app.get('/api/supabase-test', async (req, res) => {
 
     res.json({
       status: true,
-      message: 'Supabase berhasil terhubung! 🚀',
+      message:
+        'Supabase berhasil terhubung! 🚀',
       data: data
     });
 
@@ -144,7 +163,8 @@ app.get('/api/siswa', async (req, res) => {
 
     return res.status(500).json({
       status: false,
-      message: 'Supabase belum dikonfigurasi.'
+      message:
+        'Supabase belum dikonfigurasi.'
     });
 
   }
@@ -195,7 +215,8 @@ app.get('/api/jadwal', async (req, res) => {
 
     return res.status(500).json({
       status: false,
-      message: 'Supabase belum dikonfigurasi.'
+      message:
+        'Supabase belum dikonfigurasi.'
     });
 
   }
@@ -243,7 +264,8 @@ app.get('/api/absensi', async (req, res) => {
 
     return res.status(500).json({
       status: false,
-      message: 'Supabase belum dikonfigurasi.'
+      message:
+        'Supabase belum dikonfigurasi.'
     });
 
   }
@@ -285,14 +307,15 @@ app.get('/api/absensi', async (req, res) => {
 
 
 /* =========================================
-   404 API
+   API 404
 ========================================= */
 
 app.use('/api', (req, res) => {
 
   res.status(404).json({
     status: false,
-    message: 'API endpoint tidak ditemukan.'
+    message:
+      'API endpoint tidak ditemukan.'
   });
 
 });
@@ -308,7 +331,8 @@ app.use((err, req, res, next) => {
 
   res.status(500).json({
     status: false,
-    message: 'Terjadi kesalahan pada server.',
+    message:
+      'Terjadi kesalahan pada server.',
     error: err.message
   });
 
