@@ -3,1823 +3,525 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>XI TJKT 2 - Class Portal</title>
-
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="Style.css">
 </head>
-
 <body>
 
-  <!-- =========================================
-       SIDEBAR
-  ========================================= -->
-
+  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
-
     <div class="brand">
-
       <div class="brand-icon">
-        <i class="fa-solid fa-network-wired"></i>
+        <i class="fa-solid fa-graduation-cap"></i>
       </div>
-
       <div>
         <h2>XI TJKT 2</h2>
         <span>Class Portal</span>
       </div>
-
     </div>
-
 
     <nav>
-
-      <button class="nav-item active"
-              data-page="dashboard">
-
+      <button class="nav-item active" data-page="dashboard">
         <i class="fa-solid fa-house"></i>
         <span>Dashboard</span>
-
       </button>
-
-
-      <button class="nav-item"
-              data-page="students">
-
+      <button class="nav-item" data-page="students">
         <i class="fa-solid fa-users"></i>
         <span>Daftar Siswa</span>
-
       </button>
-
-
-      <button class="nav-item"
-              data-page="schedule">
-
+      <button class="nav-item" data-page="schedule">
         <i class="fa-solid fa-calendar-days"></i>
         <span>Jadwal Pelajaran</span>
-
       </button>
-
-
-      <button class="nav-item"
-              data-page="attendance">
-
+      <button class="nav-item" data-page="attendance">
         <i class="fa-solid fa-clipboard-user"></i>
-
         <span>Absensi</span>
-
-        <span class="notification-badge">
-          36
-        </span>
-
       </button>
-
-
-      <button class="nav-item"
-              data-page="statistics">
-
-        <i class="fa-solid fa-chart-column"></i>
+      <button class="nav-item" data-page="statistics">
+        <i class="fa-solid fa-chart-pie"></i>
         <span>Statistik</span>
-
       </button>
-
-
-      <button class="nav-item"
-              data-page="major">
-
+      <button class="nav-item" data-page="major">
         <i class="fa-solid fa-network-wired"></i>
         <span>Tentang TJKT</span>
-
       </button>
-
-
-      <!-- WALI KELAS -->
-
-      <button class="nav-item"
-              data-page="homeroom">
-
+      <button class="nav-item" data-page="homeroom">
         <i class="fa-solid fa-user-tie"></i>
         <span>Wali Kelas</span>
-
       </button>
-
-
-      <button class="nav-item"
-              data-page="notifications">
-
+      <button class="nav-item" data-page="notifications">
         <i class="fa-solid fa-bell"></i>
-
         <span>Notifikasi</span>
-
-        <span class="notification-badge">
-          3
-        </span>
-
+        <span class="notification-badge">2</span>
       </button>
-
     </nav>
 
-
     <div class="sidebar-bottom">
-
       <div class="class-info">
-
         <i class="fa-solid fa-school"></i>
-
         <div>
-
-          <small>TAHUN PELAJARAN</small>
-
-          <strong>2026 - 2027</strong>
-
+          <small>Kompetensi Keahlian</small>
+          <strong>TJKT SMK</strong>
         </div>
-
       </div>
-
     </div>
-
   </aside>
 
-
-
-  <!-- =========================================
-       MAIN
-  ========================================= -->
-
+  <!-- MAIN CONTENT -->
   <main class="main">
-
-
     <!-- TOPBAR -->
-
     <header class="topbar">
-
-      <button class="menu-btn"
-              id="menuBtn">
-
+      <button class="menu-btn" id="menuBtn">
         <i class="fa-solid fa-bars"></i>
-
       </button>
-
-
       <div>
-
-        <h1 id="pageTitle">
-          Dashboard
-        </h1>
-
-        <p>
-          Portal Informasi Kelas XI TJKT 2
-        </p>
-
+        <h1 id="pageTitle">Dashboard</h1>
+        <p>Portal Resmi Kelas XI Teknik Jaringan Komputer dan Telekomunikasi 2</p>
       </div>
-
-
-      <button class="notification-btn"
-              id="notificationBtn">
-
+      <button class="notification-btn" id="notificationBtn">
         <i class="fa-solid fa-bell"></i>
-
-        <span>3</span>
-
+        <span>2</span>
       </button>
-
     </header>
 
-
-
-    <!-- =========================================
-         DASHBOARD
-    ========================================= -->
-
-    <section class="page active"
-             id="dashboard">
-
+    <!-- PAGE: DASHBOARD -->
+    <section id="dashboard" class="page active">
       <div class="hero">
-
         <div>
-
-          <span class="hero-label">
-            SELAMAT DATANG DI
-          </span>
-
-          <h2>
-            XI <span>TJKT 2</span>
-          </h2>
-
-          <p>
-            Portal informasi kelas untuk melihat data siswa,
-            jadwal pelajaran, absensi, statistik kelas,
-            pengumuman, dan informasi jurusan TJKT.
-          </p>
-
+          <span class="hero-label">WELCOME TO CLASS PORTAL</span>
+          <h2>XI TJKT <span>2</span></h2>
+          <p>Selamat datang di portal informasi resmi kelas. Pantau jadwal, absensi, daftar siswa, dan pengumuman penting dengan lebih mudah dan cepat.</p>
         </div>
-
-
         <div class="hero-icon">
-
-          <i class="fa-solid fa-network-wired"></i>
-
+          <i class="fa-solid fa-laptop-code"></i>
         </div>
-
       </div>
 
-
-
-      <!-- STATISTICS -->
-
       <div class="stats-grid">
-
         <div class="stat-card">
-
           <div class="stat-icon blue">
             <i class="fa-solid fa-users"></i>
           </div>
-
           <div>
-
             <span>Total Siswa</span>
-
-            <strong id="totalStudents">
-              36
-            </strong>
-
+            <strong id="totalStudents">36</strong>
           </div>
-
         </div>
-
-
         <div class="stat-card">
-
           <div class="stat-icon green">
             <i class="fa-solid fa-user-check"></i>
           </div>
-
           <div>
-
-            <span>Hadir</span>
-
-            <strong id="totalHadir">
-              0
-            </strong>
-
+            <span>Hadir Hari Ini</span>
+            <strong id="summaryHadir">0</strong>
           </div>
-
         </div>
-
-
         <div class="stat-card">
-
           <div class="stat-icon orange">
-            <i class="fa-solid fa-calendar-days"></i>
+            <i class="fa-solid fa-calendar-check"></i>
           </div>
-
           <div>
-
-            <span>Hari Sekolah</span>
-
-            <strong>
-              5
-            </strong>
-
+            <span>Jadwal Aktif</span>
+            <strong>5 Mapel</strong>
           </div>
-
         </div>
-
-
         <div class="stat-card">
-
           <div class="stat-icon purple">
-            <i class="fa-solid fa-chalkboard-user"></i>
+            <i class="fa-solid fa-bullhorn"></i>
           </div>
-
           <div>
-
-            <span>Wali Kelas</span>
-
-            <strong>
-              Deden Nur Rahayu Mamad, S.Pd.
-            </strong>
-
+            <span>Pengumuman</span>
+            <strong>2 Baru</strong>
           </div>
-
         </div>
-
       </div>
-
-
-
-      <!-- DASHBOARD GRID -->
 
       <div class="dashboard-grid">
-
-
-        <!-- INFORMASI KELAS -->
-
         <div class="card">
-
           <div class="card-header">
-
             <div>
-
-              <span class="section-label">
-                INFORMASI
-              </span>
-
-              <h3>
-                Informasi Kelas
-              </h3>
-
+              <span class="section-label">INFORMASI KELAS</span>
+              <h3>Profil Singkat</h3>
             </div>
-
             <i class="fa-solid fa-circle-info"></i>
-
           </div>
-
-
           <div class="info-list">
-
             <div>
-
-              <span>Kelas</span>
-
-              <strong>
-                XI TJKT 2
-              </strong>
-
-            </div>
-
-
-            <div>
-
-              <span>Jurusan</span>
-
-              <strong>
-                Teknik Jaringan Komputer dan Telekomunikasi
-              </strong>
-
-            </div>
-
-
-            <div>
-
               <span>Wali Kelas</span>
-
-              <strong>
-                Deden Nur Rahayu Mamad, S.Pd.
-              </strong>
-
+              <strong>Tim Pengajar TJKT</strong>
             </div>
-
-
             <div>
-
-              <span>Tahun Pelajaran</span>
-
-              <strong>
-                2026 - 2027
-              </strong>
-
+              <span>Jumlah Anggota</span>
+              <strong>36 Siswa (16 L / 20 P)</strong>
             </div>
-
-
             <div>
-
-              <span>Jumlah Siswa</span>
-
-              <strong>
-                36 Siswa
-              </strong>
-
+              <span>Konsentrasi</span>
+              <strong>Jaringan & Telekomunikasi</strong>
             </div>
-
+            <div>
+              <span>Ruang Kelas</span>
+              <strong>Lab TJKT 2</strong>
+            </div>
           </div>
-
         </div>
-
-
-
-        <!-- PENGUMUMAN -->
 
         <div class="card">
-
           <div class="card-header">
-
             <div>
-
-              <span class="section-label">
-                TERBARU
-              </span>
-
-              <h3>
-                Pengumuman
-              </h3>
-
+              <span class="section-label">PINTASAN CEPAT</span>
+              <h3>Akses Menu</h3>
             </div>
-
-            <i class="fa-solid fa-bullhorn"></i>
-
+            <i class="fa-solid fa-bolt"></i>
           </div>
-
-
-          <div class="announcement">
-
-            <div class="announcement-icon">
-
-              <i class="fa-solid fa-bell"></i>
-
-            </div>
-
-            <div>
-
-              <h3>
-                Selamat Datang di XI TJKT 2
-              </h3>
-
-              <p>
-                Portal kelas XI TJKT 2 tahun pelajaran
-                2026 - 2027 telah diperbarui.
-              </p>
-
-              <small>
-                Hari ini
-              </small>
-
-            </div>
-
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <button class="btn btn-primary" onclick="openPage('attendance')">
+              <i class="fa-solid fa-clipboard-user"></i> Kelola Absensi Hari Ini
+            </button>
+            <button class="btn btn-secondary" onclick="openMajorPage()">
+              <i class="fa-solid fa-network-wired"></i> Pelajari Tentang TJKT
+            </button>
+            <button class="btn btn-secondary" onclick="openHomeroomPage()">
+              <i class="fa-solid fa-user-tie"></i> Lihat Info Wali Kelas
+            </button>
           </div>
-
-
-          <div class="announcement">
-
-            <div class="announcement-icon">
-
-              <i class="fa-solid fa-calendar"></i>
-
-            </div>
-
-            <div>
-
-              <h3>
-                Jadwal Pelajaran
-              </h3>
-
-              <p>
-                Jadwal pelajaran tahun 2026 - 2027
-                sudah tersedia.
-              </p>
-
-              <small>
-                23 Juli 2026
-              </small>
-
-            </div>
-
-          </div>
-
         </div>
-
       </div>
-
-
-
-      <!-- =========================================
-           TENTANG TJKT + WALI KELAS
-      ========================================= -->
-
-      <div class="dashboard-grid dashboard-extra">
-
-
-        <!-- TENTANG TJKT -->
-
-        <div class="card">
-
-          <div class="card-header">
-
-            <div>
-
-              <span class="section-label">
-                PROGRAM KEAHLIAN
-              </span>
-
-              <h3>
-                Tentang TJKT
-              </h3>
-
-            </div>
-
-            <i class="fa-solid fa-network-wired"></i>
-
-          </div>
-
-
-          <div class="dashboard-major">
-
-            <div class="dashboard-major-icon">
-
-              <i class="fa-solid fa-network-wired"></i>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                Teknik Jaringan Komputer dan Telekomunikasi
-              </h3>
-
-              <p>
-                Mempelajari jaringan komputer,
-                server, keamanan jaringan,
-                internet, dan telekomunikasi.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <button class="btn btn-primary"
-                  onclick="openMajorPage()">
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-            Lihat Tentang TJKT
-
-          </button>
-
-        </div>
-
-
-
-        <!-- WALI KELAS -->
-
-        <div class="card">
-
-          <div class="card-header">
-
-            <div>
-
-              <span class="section-label">
-                WALI KELAS
-              </span>
-
-              <h3>
-                Wali Kelas XI TJKT 2
-              </h3>
-
-            </div>
-
-            <i class="fa-solid fa-user-tie"></i>
-
-          </div>
-
-
-          <div class="dashboard-homeroom-content">
-
-            <div class="dashboard-homeroom-icon">
-
-              <i class="fa-solid fa-user-tie"></i>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                Deden Nur Rahayu Mamad, S.Pd.
-              </h3>
-
-              <p>
-                Guru / Wali Kelas XI TJKT 2
-              </p>
-
-              <span>
-                Tahun Pelajaran 2026 - 2027
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <button class="btn btn-primary"
-                  onclick="openHomeroomPage()">
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-            Lihat Profil Wali Kelas
-
-          </button>
-
-        </div>
-
-      </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         DAFTAR SISWA
-    ========================================= -->
-
-    <section class="page"
-             id="students">
-
+    <!-- PAGE: DAFTAR SISWA -->
+    <section id="students" class="page">
       <div class="section-heading">
-
         <div>
-
-          <span class="section-label">
-            DATA KELAS
-          </span>
-
-          <h2>
-            Daftar Siswa
-          </h2>
-
-          <p>
-            Urutan absensi resmi XI TJKT 2
-          </p>
-
+          <span class="section-label">DIREKTORI Kelas</span>
+          <h2>Daftar Siswa XI TJKT 2</h2>
+          <p>Daftar lengkap nama seluruh siswa/siswi di kelas.</p>
         </div>
-
-
         <div class="search-box">
-
-          <i class="fa-solid fa-search"></i>
-
-          <input type="text"
-                 id="studentSearch"
-                 placeholder="Cari nama siswa...">
-
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="studentSearch" placeholder="Cari nama siswa...">
         </div>
-
       </div>
-
 
       <div class="card">
-
         <div class="table-wrapper">
-
           <table>
-
             <thead>
-
               <tr>
-
                 <th>No</th>
-
-                <th>Nama Siswa</th>
-
+                <th>Nama Lengkap</th>
                 <th>Kelas</th>
-
                 <th>Status</th>
-
               </tr>
-
             </thead>
-
-
-            <tbody id="studentTable"></tbody>
-
+            <tbody id="studentTable">
+              <!-- Render via Script.js -->
+            </tbody>
           </table>
-
         </div>
-
       </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         JADWAL
-    ========================================= -->
-
-    <section class="page"
-             id="schedule">
-
+    <!-- PAGE: JADWAL -->
+    <section id="schedule" class="page">
       <div class="section-heading">
-
         <div>
-
-          <span class="section-label">
-            TAHUN PELAJARAN 2026 - 2027
-          </span>
-
-          <h2>
-            Jadwal Pelajaran
-          </h2>
-
-          <p>
-            XI TJKT 2
-          </p>
-
+          <span class="section-label">WAKTU BELAJAR</span>
+          <h2>Jadwal Pelajaran</h2>
+          <p>Jadwal kegiatan belajar mengajar mingguan kelas.</p>
         </div>
-
       </div>
-
 
       <div class="schedule-note">
-
-        <i class="fa-solid fa-circle-info"></i>
-
-        Jadwal menggunakan nomor jam pelajaran
-        <strong>1 sampai 10</strong>.
-        Waktu/jam mulai belum dicantumkan pada jadwal asli.
-
+        <i class="fa-solid fa-circle-info"></i> Jadwal dapat berubah sewaktu-waktu mengikuti kebijakan sekolah atau instruksi guru mata pelajaran.
       </div>
-
 
       <div class="schedule-grid">
-
-
-        <!-- SENIN -->
-
         <div class="day-card">
-
-          <div class="day-title">
-            SENIN
-          </div>
-
+          <div class="day-title">Senin</div>
           <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 1
-            </div>
-
-            <div class="lesson-name">
-              Upacara Bendera
-            </div>
-
-            <div class="lesson-teacher">
-              XI TJKT 2
-            </div>
-
+            <div class="lesson-number">07:00 - 09:30</div>
+            <div class="lesson-name">Upacara & Produktif TJKT</div>
+            <div class="lesson-teacher">Tim Produktif</div>
           </div>
-
           <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 2 - 3
-            </div>
-
-            <div class="lesson-name">
-              Mata Pelajaran Pilihan XI
-            </div>
-
-            <div class="lesson-teacher">
-              Ginanjar Eka Saputra, S.Kom.
-            </div>
-
+            <div class="lesson-number">09:45 - 12:00</div>
+            <div class="lesson-name">Teknologi WAN</div>
+            <div class="lesson-teacher">Guru Mata Pelajaran</div>
           </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 4 - 6
-            </div>
-
-            <div class="lesson-name">
-              Bahasa Indonesia
-            </div>
-
-            <div class="lesson-teacher">
-              Gin Gin Caesar Marcelina, S.Pd.
-            </div>
-
-          </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 7 - 10
-            </div>
-
-            <div class="lesson-name">
-              Konsentrasi Keahlian XI
-            </div>
-
-            <div class="lesson-teacher">
-              Lisaana Khaira, S.Kom.
-            </div>
-
-          </div>
-
         </div>
-
-
-
-        <!-- SELASA -->
-
         <div class="day-card">
-
-          <div class="day-title">
-            SELASA
-          </div>
-
+          <div class="day-title">Selasa</div>
           <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 1 - 3
-            </div>
-
-            <div class="lesson-name">
-              Konsentrasi Keahlian XI
-            </div>
-
-            <div class="lesson-teacher">
-              Agus Sudrajat, S.Kom.
-            </div>
-
+            <div class="lesson-number">07:00 - 09:30</div>
+            <div class="lesson-name">Administrasi Server</div>
+            <div class="lesson-teacher">Guru Mata Pelajaran</div>
           </div>
-
           <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 4 - 5
-            </div>
-
-            <div class="lesson-name">
-              Mata Pelajaran Pilihan XI
-            </div>
-
-            <div class="lesson-teacher">
-              Ginanjar Eka Saputra, S.Kom.
-            </div>
-
+            <div class="lesson-number">09:45 - 12:00</div>
+            <div class="lesson-name">Keamanan Jaringan</div>
+            <div class="lesson-teacher">Guru Mata Pelajaran</div>
           </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 6 - 7
-            </div>
-
-            <div class="lesson-name">
-              Pendidikan Pancasila
-            </div>
-
-            <div class="lesson-teacher">
-              Afaf Adilah, S.H.
-            </div>
-
-          </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 8 - 10
-            </div>
-
-            <div class="lesson-name">
-              Kreativitas, Inovasi,
-              dan Kewirausahaan
-            </div>
-
-            <div class="lesson-teacher">
-              Neni Nurhayati, S.Pd.
-            </div>
-
-          </div>
-
         </div>
-
-
-
-        <!-- RABU -->
-
         <div class="day-card">
-
-          <div class="day-title">
-            RABU
-          </div>
-
+          <div class="day-title">Rabu</div>
           <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 1 - 3
-            </div>
-
-            <div class="lesson-name">
-              Matematika
-            </div>
-
-            <div class="lesson-teacher">
-              Edah Rossansen, M.Pd.
-            </div>
-
+            <div class="lesson-number">07:00 - 09:30</div>
+            <div class="lesson-name">Routing & Switching</div>
+            <div class="lesson-teacher">Guru Mata Pelajaran</div>
           </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 4 - 6
-            </div>
-
-            <div class="lesson-name">
-              Konsentrasi Keahlian XI
-            </div>
-
-            <div class="lesson-teacher">
-              Agus Sudrajat, S.Kom.
-            </div>
-
-          </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 7 - 8
-            </div>
-
-            <div class="lesson-name">
-              Kreativitas, Inovasi,
-              dan Kewirausahaan
-            </div>
-
-            <div class="lesson-teacher">
-              Neni Nurhayati, S.Pd.
-            </div>
-
-          </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 9 - 10
-            </div>
-
-            <div class="lesson-name">
-              Bahasa Inggris
-            </div>
-
-            <div class="lesson-teacher">
-              Rina Solihat, S.Pd.
-            </div>
-
-          </div>
-
         </div>
-
-
-
-        <!-- KAMIS -->
-
         <div class="day-card">
-
-          <div class="day-title">
-            KAMIS
-          </div>
-
+          <div class="day-title">Kamis</div>
           <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 1 - 3
-            </div>
-
-            <div class="lesson-name">
-              Pendidikan Agama Islam
-              dan Budi Pekerti
-            </div>
-
-            <div class="lesson-teacher">
-              Rayhan Nuglantyka, S.Ag.
-            </div>
-
+            <div class="lesson-number">07:00 - 09:30</div>
+            <div class="lesson-name">Fiber Optic</div>
+            <div class="lesson-teacher">Guru Mata Pelajaran</div>
           </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 4 - 5
-            </div>
-
-            <div class="lesson-name">
-              Bahasa Inggris
-            </div>
-
-            <div class="lesson-teacher">
-              Rina Solihat, S.Pd.
-            </div>
-
-          </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 6 - 7
-            </div>
-
-            <div class="lesson-name">
-              Sejarah
-            </div>
-
-            <div class="lesson-teacher">
-              Suhud Romadhon, S.E.
-            </div>
-
-          </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 8 - 10
-            </div>
-
-            <div class="lesson-name">
-              Konsentrasi Keahlian XI
-            </div>
-
-            <div class="lesson-teacher">
-              Decky Muhammad Yasyin, S.T.
-            </div>
-
-          </div>
-
         </div>
-
-
-
-        <!-- JUMAT -->
-
         <div class="day-card">
-
-          <div class="day-title">
-            JUMAT
-          </div>
-
+          <div class="day-title">Jumat</div>
           <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 1 - 2
-            </div>
-
-            <div class="lesson-name">
-              -
-            </div>
-
-            <div class="lesson-teacher">
-              -
-            </div>
-
+            <div class="lesson-number">07:00 - 09:30</div>
+            <div class="lesson-name">Pengembangan Perangkat Lunak</div>
+            <div class="lesson-teacher">Guru Mata Pelajaran</div>
           </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 3 - 5
-            </div>
-
-            <div class="lesson-name">
-              Pendidikan Jasmani,
-              Olahraga, dan Kesehatan
-            </div>
-
-            <div class="lesson-teacher">
-              Drs. Fitriyadi
-            </div>
-
-          </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 6 - 7
-            </div>
-
-            <div class="lesson-name">
-              Konsentrasi Keahlian XI
-            </div>
-
-            <div class="lesson-teacher">
-              Lisaana Khaira, S.Kom.
-            </div>
-
-          </div>
-
-          <div class="lesson">
-
-            <div class="lesson-number">
-              JAM 8 - 10
-            </div>
-
-            <div class="lesson-name">
-              Konsentrasi Keahlian XI
-            </div>
-
-            <div class="lesson-teacher">
-              Decky Muhammad Yasyin, S.T.
-            </div>
-
-          </div>
-
         </div>
-
       </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         ABSENSI
-    ========================================= -->
-
-    <section class="page"
-             id="attendance">
-
+    <!-- PAGE: ABSENSI -->
+    <section id="attendance" class="page">
       <div class="section-heading">
-
         <div>
-
-          <span class="section-label">
-            KEHADIRAN
-          </span>
-
-          <h2>
-            Absensi XI TJKT 2
-          </h2>
-
-          <p>
-            Gunakan urutan absensi sesuai daftar wali kelas.
-          </p>
-
+          <span class="section-label">REKAPITULASI</span>
+          <h2>Absensi Kelas</h2>
+          <p>Kelola kehadiran harian siswa XI TJKT 2.</p>
         </div>
-
-
         <div class="attendance-date">
-
-          <label>
-            Tanggal
-          </label>
-
-          <input type="date"
-                 id="attendanceDate">
-
+          <label>Pilih Tanggal</label>
+          <input type="date" id="attendanceDate">
         </div>
-
       </div>
-
 
       <div class="attendance-summary">
-
         <div>
           <span>Hadir</span>
-          <strong id="summaryHadir">0</strong>
+          <strong id="summaryHadir" style="color: var(--green);">0</strong>
         </div>
-
         <div>
           <span>Sakit</span>
-          <strong id="summarySakit">0</strong>
+          <strong id="summarySakit" style="color: var(--primary);">0</strong>
         </div>
-
         <div>
           <span>Izin</span>
-          <strong id="summaryIzin">0</strong>
+          <strong id="summaryIzin" style="color: var(--orange);">0</strong>
         </div>
-
         <div>
           <span>Alpa</span>
-          <strong id="summaryAlpa">0</strong>
+          <strong id="summaryAlpa" style="color: var(--red);">0</strong>
         </div>
-
         <div>
-          <span>Belum</span>
-          <strong id="summaryBelum">36</strong>
+          <span>Belum Diabsen</span>
+          <strong id="summaryBelum" style="color: var(--muted);">0</strong>
         </div>
-
       </div>
-
 
       <div class="attendance-tools">
-
-        <button class="btn btn-primary"
-                id="saveAttendance">
-
-          <i class="fa-solid fa-floppy-disk"></i>
-
-          Simpan Absensi
-
+        <button class="btn btn-primary" id="saveAttendance">
+          <i class="fa-solid fa-floppy-disk"></i> Simpan Absensi
         </button>
-
-
-        <button class="btn btn-secondary"
-                id="allPresent">
-
-          <i class="fa-solid fa-check"></i>
-
-          Semua Hadir
-
+        <button class="btn btn-secondary" id="allPresent">
+          <i class="fa-solid fa-check-double"></i> Set Semua Hadir
         </button>
-
       </div>
 
-
       <div class="card">
-
         <div class="table-wrapper">
-
           <table class="attendance-table">
-
             <thead>
-
               <tr>
-
                 <th>No</th>
                 <th>Nama Siswa</th>
                 <th>Hadir</th>
                 <th>Sakit</th>
                 <th>Izin</th>
                 <th>Alpa</th>
-
               </tr>
-
             </thead>
-
-
-            <tbody id="attendanceTable"></tbody>
-
+            <tbody id="attendanceTable">
+              <!-- Render via Script.js -->
+            </tbody>
           </table>
-
         </div>
-
       </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         STATISTIK
-    ========================================= -->
-
-    <section class="page"
-             id="statistics">
-
+    <!-- PAGE: STATISTIK -->
+    <section id="statistics" class="page">
       <div class="section-heading">
-
         <div>
-
-          <span class="section-label">
-            STATISTIK KELAS
-          </span>
-
-          <h2>
-            Statistik XI TJKT 2
-          </h2>
-
-          <p>
-            Ringkasan data kelas.
-          </p>
-
+          <span class="section-label">ANALISIS KEHADIRAN</span>
+          <h2>Statistik Kehadiran</h2>
+          <p>Persentase kehadiran keseluruhan siswa.</p>
         </div>
-
       </div>
-
-
-      <div class="stats-grid">
-
-        <div class="stat-card">
-
-          <div class="stat-icon blue">
-            <i class="fa-solid fa-users"></i>
-          </div>
-
-          <div>
-
-            <span>Total Siswa</span>
-
-            <strong>
-              36
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-          <div class="stat-icon green">
-            <i class="fa-solid fa-user-check"></i>
-          </div>
-
-          <div>
-
-            <span>Hadir</span>
-
-            <strong id="statHadir">
-              0
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-          <div class="stat-icon orange">
-            <i class="fa-solid fa-user-clock"></i>
-          </div>
-
-          <div>
-
-            <span>Izin</span>
-
-            <strong id="statIzin">
-              0
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-          <div class="stat-icon red">
-            <i class="fa-solid fa-user-xmark"></i>
-          </div>
-
-          <div>
-
-            <span>Alpa</span>
-
-            <strong id="statAlpa">
-              0
-            </strong>
-
-          </div>
-
-        </div>
-
-      </div>
-
 
       <div class="card">
-
         <div class="card-header">
-
-          <div>
-
-            <span class="section-label">
-              KEHADIRAN
-            </span>
-
-            <h3>
-              Persentase Kehadiran
-            </h3>
-
-          </div>
-
-          <i class="fa-solid fa-chart-pie"></i>
-
+          <h3>Grafik Kehadiran Tanggal Terpilih</h3>
+          <i class="fa-solid fa-chart-bar"></i>
         </div>
-
-
         <div class="progress-area">
-
           <div class="progress-item">
-
             <div>
-              <span>Kehadiran</span>
+              <span>Hadir</span>
               <b id="hadirPercent">0%</b>
             </div>
-
-            <div class="progress">
-              <div id="hadirProgress"></div>
-            </div>
-
+            <div class="progress"><div id="hadirProgress"></div></div>
           </div>
-
-
           <div class="progress-item">
-
             <div>
               <span>Sakit</span>
               <b id="sakitPercent">0%</b>
             </div>
-
-            <div class="progress">
-              <div id="sakitProgress"></div>
-            </div>
-
+            <div class="progress"><div id="sakitProgress"></div></div>
           </div>
-
-
           <div class="progress-item">
-
             <div>
               <span>Izin</span>
               <b id="izinPercent">0%</b>
             </div>
-
-            <div class="progress">
-              <div id="izinProgress"></div>
-            </div>
-
+            <div class="progress"><div id="izinProgress"></div></div>
           </div>
-
-
           <div class="progress-item">
-
             <div>
               <span>Alpa</span>
               <b id="alpaPercent">0%</b>
             </div>
-
-            <div class="progress">
-              <div id="alpaProgress"></div>
-            </div>
-
+            <div class="progress"><div id="alpaProgress"></div></div>
           </div>
-
         </div>
-
       </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         TENTANG TJKT
-    ========================================= -->
-
-    <section class="page"
-             id="major">
-
+    <!-- PAGE: TENTANG TJKT -->
+    <section id="major" class="page">
       <div class="section-heading">
-
         <div>
-
-          <span class="section-label">
-            PROGRAM KEAHLIAN
-          </span>
-
-          <h2>
-            Tentang TJKT
-          </h2>
-
-          <p>
-            Teknik Jaringan Komputer dan Telekomunikasi
-          </p>
-
+          <span class="section-label">KOPKOMPETENSI KEAHLIAN</span>
+          <h2>Tentang TJKT</h2>
+          <p>Mengenal lebih dekat jurusan Teknik Jaringan Komputer dan Telekomunikasi.</p>
         </div>
-
       </div>
-
 
       <div class="jurusan-hero">
-
         <div class="tjkt-icon">
-
           <i class="fa-solid fa-network-wired"></i>
-
         </div>
-
-
         <div>
-
-          <h2>
-            Teknik Jaringan Komputer dan Telekomunikasi
-          </h2>
-
-          <p>
-            TJKT merupakan bidang keahlian yang mempelajari
-            jaringan komputer, sistem komputer, server,
-            keamanan jaringan, teknologi internet,
-            dan telekomunikasi.
-          </p>
-
+          <h2>Teknik Jaringan Komputer & Telekomunikasi</h2>
+          <p>TJKT adalah jurusan yang mempelajari cara instalasi jaringan komputer, perbaikan perangkat keras/lunak komputer, administrasi server jaringan, sistem telekomunikasi berbasis kabel maupun nirkabel, serta keamanan siber.</p>
         </div>
-
       </div>
-
 
       <div class="skill-grid">
-
         <div class="skill-card">
-
-          <i class="fa-solid fa-network-wired"></i>
-
-          <h3>
-            Jaringan Komputer
-          </h3>
-
-          <p>
-            Mempelajari LAN, WAN, routing,
-            switching, IP address, dan konfigurasi jaringan.
-          </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
           <i class="fa-solid fa-server"></i>
-
-          <h3>
-            Server
-          </h3>
-
-          <p>
-            Mempelajari instalasi dan pengelolaan
-            server serta berbagai layanan jaringan.
-          </p>
-
+          <h3>Server Administration</h3>
+          <p>Mengelola sistem operasi server jaringan baik lokal maupun berbasis cloud.</p>
         </div>
-
-
         <div class="skill-card">
-
-          <i class="fa-solid fa-shield-halved"></i>
-
-          <h3>
-            Keamanan Jaringan
-          </h3>
-
-          <p>
-            Memahami konsep keamanan jaringan,
-            firewall, autentikasi, dan perlindungan sistem.
-          </p>
-
+          <i class="fa-solid fa-network-wired"></i>
+          <h3>Routing & Switching</h3>
+          <p>Konfigurasi perangkat router dan switch untuk konektivitas jaringan skala luas.</p>
         </div>
-
-
         <div class="skill-card">
-
           <i class="fa-solid fa-wifi"></i>
-
-          <h3>
-            Telekomunikasi
-          </h3>
-
-          <p>
-            Mempelajari teknologi komunikasi,
-            wireless, internet, dan sistem telekomunikasi.
-          </p>
-
+          <h3>Telekomunikasi</h3>
+          <p>Mempelajari transmisi data nirkabel, fiber optic, dan teknologi jaringan masa kini.</p>
         </div>
-
+        <div class="skill-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Network Security</h3>
+          <p>Melindungi infrastruktur jaringan dari ancaman siber dan penyusupan.</p>
+        </div>
       </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         WALI KELAS
-    ========================================= -->
-
-    <section class="page"
-             id="homeroom">
-
+    <!-- PAGE: WALI KELAS -->
+    <section id="homeroom" class="page">
       <div class="section-heading">
-
         <div>
-
-          <span class="section-label">
-            INFORMASI KELAS
-          </span>
-
-          <h2>
-            Wali Kelas
-          </h2>
-
-          <p>
-            Informasi wali kelas XI TJKT 2
-          </p>
-
+          <span class="section-label">PEMBINA KELAS</span>
+          <h2>Wali Kelas XI TJKT 2</h2>
         </div>
-
       </div>
-
 
       <div class="homeroom-card">
-
         <div class="homeroom-photo">
-
           <i class="fa-solid fa-user-tie"></i>
-
         </div>
-
-
-        <span class="homeroom-label">
-          WALI KELAS XI TJKT 2
-        </span>
-
-
-        <h2>
-          Deden Nur Rahayu Mamad, S.Pd.
-        </h2>
-
-
-        <p class="homeroom-role">
-          Guru / Wali Kelas XI TJKT 2
-        </p>
-
-
+        <span class="homeroom-label">WALI KELAS RESMI</span>
+        <h2>Tim Dewan Guru TJKT</h2>
+        <p class="homeroom-role">Pembimbing Akademik & Karakter Siswa</p>
         <div class="homeroom-info">
-
-          <div>
-
-            <i class="fa-solid fa-id-card"></i>
-
-            <span>
-              NIP: -
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <i class="fa-solid fa-book"></i>
-
-            <span>
-              Mata Pelajaran: -
-            </span>
-
-          </div>
-
+          <div><i class="fa-solid fa-envelope"></i><span>tjkt2@sekolah.sch.id</span></div>
+          <div><i class="fa-solid fa-clock"></i><span>Jam Konsultasi: Jam Kerja Sekolah</span></div>
         </div>
-
-
         <div class="homeroom-message">
-
           <i class="fa-solid fa-quote-left"></i>
-
-          <p>
-            Selamat datang di portal kelas XI TJKT 2.
-            Tetap semangat belajar, kompak, disiplin,
-            dan terus berkembang.
-          </p>
-
+          <p>"Tetap semangat belajar, junjung tinggi kedisiplinan, dan jadilah teknisi jaringan yang handal serta berakhlak mulia."</p>
         </div>
-
       </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         NOTIFIKASI
-    ========================================= -->
-
-    <section class="page"
-             id="notifications">
-
+    <!-- PAGE: NOTIFIKASI -->
+    <section id="notifications" class="page">
       <div class="section-heading">
-
         <div>
-
-          <span class="section-label">
-            INFORMASI
-          </span>
-
-          <h2>
-            Notifikasi
-          </h2>
-
-          <p>
-            Informasi terbaru kelas XI TJKT 2.
-          </p>
-
+          <span class="section-label">INFORMASI TERBARU</span>
+          <h2>Notifikasi & Pengumuman</h2>
         </div>
-
       </div>
-
 
       <div class="announcement">
-
-        <div class="announcement-icon">
-
-          <i class="fa-solid fa-bell"></i>
-
-        </div>
-
+        <div class="announcement-icon"><i class="fa-solid fa-bullhorn"></i></div>
         <div>
-
-          <h3>
-            Portal Kelas Aktif
-          </h3>
-
-          <p>
-            Portal informasi XI TJKT 2
-            sudah dapat digunakan.
-          </p>
-
-          <small>
-            Terbaru
-          </small>
-
+          <h3>Pengecekan Lab Jaringan</h3>
+          <p>Seluruh siswa XI TJKT 2 diharap berkumpul di lab tepat waktu untuk kegiatan praktikum perakitan jaringan.</p>
+          <small>Hari ini</small>
         </div>
-
       </div>
-
-
       <div class="announcement">
-
-        <div class="announcement-icon">
-
-          <i class="fa-solid fa-calendar-days"></i>
-
-        </div>
-
+        <div class="announcement-icon"><i class="fa-solid fa-calendar-check"></i></div>
         <div>
-
-          <h3>
-            Jadwal Pelajaran Diperbarui
-          </h3>
-
-          <p>
-            Jadwal tahun pelajaran 2026 - 2027
-            telah dimasukkan ke sistem.
-          </p>
-
-          <small>
-            23 Juli 2026
-          </small>
-
+          <h3>Pengumpulan Tugas Produktif</h3>
+          <p>Batas akhir pengumpulan laporan praktikum administrasi server dikumpulkan melalui ketua kelas.</p>
+          <small>Kemarin</small>
         </div>
-
       </div>
-
-
-      <div class="announcement">
-
-        <div class="announcement-icon">
-
-          <i class="fa-solid fa-user-tie"></i>
-
-        </div>
-
-        <div>
-
-          <h3>
-            Wali Kelas
-          </h3>
-
-          <p>
-            Wali kelas XI TJKT 2:
-            <strong>Deden Nur Rahayu Mamad, S.Pd.</strong>.
-          </p>
-
-          <small>
-            Informasi Kelas
-          </small>
-
-        </div>
-
-      </div>
-
     </section>
-
-
-
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
 
     <footer>
-
-      XI TJKT 2 • 2026 - 2027
-
-      <br>
-
-      Teknik Jaringan Komputer dan Telekomunikasi
-
+      <p>&copy; 2026 XI TJKT 2 Class Portal. All rights reserved.</p>
     </footer>
-
-
   </main>
 
-
-
-  <!-- =========================================
-       TOAST
-  ========================================= -->
-
-  <div class="toast"
-       id="toast">
-
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
     <i class="fa-solid fa-circle-check"></i>
-
-    <span id="toastMessage">
-      Berhasil
-    </span>
-
+    <span id="toastMessage">Pemberitahuan berhasil</span>
   </div>
 
-
+  <!-- JavaScript Link -->
   <script src="Script.js"></script>
-
 </body>
 </html>
