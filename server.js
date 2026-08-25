@@ -5,44 +5,337 @@ const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
 
-// Middleware
+/* =========================================
+   MIDDLEWARE
+========================================= */
+
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Inisialisasi Supabase menggunakan Environment Variables Vercel
-const supabaseUrl = process.env.SUPABASE_URL || '';
-const supabaseKey = process.env.SUPABASE_KEY || '';
-const supabase = createClient(supabaseUrl, supabaseKey);
 
-// 1. Melayani file statis (index.html, Style.css, Script.js)
-app.use(express.static(__dirname));
+/* =========================================
+   SUPABASE
+========================================= */
 
-// 2. Route Utama (Menampilkan Frontend index.html)
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
 
-// 3. Endpoint API Cek Status Server & Supabase
-app.get('/api/status', async (req, res) => {
-  try {
-    res.json({ 
-      status: true, 
-      message: 'Backend XI TJKT 2 & Supabase Berhasil Terhubung! 🚀' 
-    });
-  } catch (error) {
-    res.status(500).json({ status: false, error: error.message });
-  }
-});
+let supabase = null;
 
-// Tambahkan Endpoint API kamu lainnya di sini (Contoh: /api/data)
-
-// Port lokal (opsional jika dijalankan di komputer)
-const PORT = process.env.PORT || 3000;
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`Server berjalan di http://localhost:${PORT}`);
-  });
+if (supabaseUrl && supabaseKey) {
+  supabase = createClient(
+    supabaseUrl,
+    supabaseKey
+  );
 }
 
-// Export app untuk Vercel Serverless
+
+/* =========================================
+   STATIC FRONTEND
+========================================= */
+
+const publicPath = __dirname;
+
+app.use(
+  express.static(publicPath, {
+    index: false
+  })
+);
+
+
+/* =========================================
+   FRONTEND
+========================================= */
+
+app.get('/', (req, res) => {
+  res.sendFile(
+    path.join(__dirname, 'index.html')
+  );
+});
+
+
+/* =========================================
+   API STATUS
+========================================= */
+
+app.get('/api/status', (req, res) => {
+
+  res.json({
+    status: true,
+    backend: 'online',
+    supabase: supabase
+      ? 'configured'
+      : 'not configured',
+    message:
+      'Backend XI TJKT 2 berhasil berjalan! 🚀'
+  });
+
+});
+
+
+/* =========================================
+   API SUPABASE TEST
+========================================= */
+
+app.get('/api/supabase-test', async (req, res) => {
+
+  if (!supabase) {
+
+    return res.status(500).json({
+      status: false,
+      message:
+        'Supabase belum dikonfigurasi. Periksa SUPABASE_URL dan SUPABASE_KEY di Environment Variables Vercel.'
+    });
+
+  }
+
+  try {
+
+    /*
+      Test koneksi dengan mengambil
+      satu data dari tabel siswa.
+
+      Pastikan tabel "siswa" sudah dibuat
+      di Supabase.
+    */
+
+    const { data, error } =
+      await supabase
+        .from('siswa')
+        .select('*')
+        .limit(1);
+
+    if (error) {
+
+      return res.status(500).json({
+        status: false,
+        message: 'Supabase terhubung tetapi query gagal.',
+        error: error.message
+      });
+
+    }
+
+    res.json({
+      status: true,
+      message: 'Supabase berhasil terhubung! 🚀',
+      data: data
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      status: false,
+      error: error.message
+    });
+
+  }
+
+});
+
+
+/* =========================================
+   API SISWA
+========================================= */
+
+app.get('/api/siswa', async (req, res) => {
+
+  if (!supabase) {
+
+    return res.status(500).json({
+      status: false,
+      message: 'Supabase belum dikonfigurasi.'
+    });
+
+  }
+
+  try {
+
+    const { data, error } =
+      await supabase
+        .from('siswa')
+        .select('*')
+        .order('no_absen', {
+          ascending: true
+        });
+
+    if (error) {
+
+      return res.status(500).json({
+        status: false,
+        error: error.message
+      });
+
+    }
+
+    res.json({
+      status: true,
+      data: data
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      status: false,
+      error: error.message
+    });
+
+  }
+
+});
+
+
+/* =========================================
+   API JADWAL
+========================================= */
+
+app.get('/api/jadwal', async (req, res) => {
+
+  if (!supabase) {
+
+    return res.status(500).json({
+      status: false,
+      message: 'Supabase belum dikonfigurasi.'
+    });
+
+  }
+
+  try {
+
+    const { data, error } =
+      await supabase
+        .from('jadwal')
+        .select('*');
+
+    if (error) {
+
+      return res.status(500).json({
+        status: false,
+        error: error.message
+      });
+
+    }
+
+    res.json({
+      status: true,
+      data: data
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      status: false,
+      error: error.message
+    });
+
+  }
+
+});
+
+
+/* =========================================
+   API ABSENSI
+========================================= */
+
+app.get('/api/absensi', async (req, res) => {
+
+  if (!supabase) {
+
+    return res.status(500).json({
+      status: false,
+      message: 'Supabase belum dikonfigurasi.'
+    });
+
+  }
+
+  try {
+
+    const { data, error } =
+      await supabase
+        .from('absensi')
+        .select('*')
+        .order('tanggal', {
+          ascending: false
+        });
+
+    if (error) {
+
+      return res.status(500).json({
+        status: false,
+        error: error.message
+      });
+
+    }
+
+    res.json({
+      status: true,
+      data: data
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      status: false,
+      error: error.message
+    });
+
+  }
+
+});
+
+
+/* =========================================
+   404 API
+========================================= */
+
+app.use('/api', (req, res) => {
+
+  res.status(404).json({
+    status: false,
+    message: 'API endpoint tidak ditemukan.'
+  });
+
+});
+
+
+/* =========================================
+   ERROR HANDLER
+========================================= */
+
+app.use((err, req, res, next) => {
+
+  console.error(err);
+
+  res.status(500).json({
+    status: false,
+    message: 'Terjadi kesalahan pada server.',
+    error: err.message
+  });
+
+});
+
+
+/* =========================================
+   LOCAL SERVER
+========================================= */
+
+const PORT = process.env.PORT || 3000;
+
+if (require.main === module) {
+
+  app.listen(PORT, () => {
+
+    console.log(
+      `Server XI TJKT 2 berjalan di http://localhost:${PORT}`
+    );
+
+  });
+
+}
+
+
+/* =========================================
+   VERCEL
+========================================= */
+
 module.exports = app;
